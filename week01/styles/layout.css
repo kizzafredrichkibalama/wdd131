@@ -1,0 +1,77 @@
+/* layout.css – WDD 131 Basic Layout */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas:
+    "header  header"
+    "nav     nav"
+    "main    aside"
+    "footer  footer";
+  min-height: 100vh;
+}
+
+/* ── Header ── */
+header {
+  grid-area: header;
+  background-color: #3a3a3a;
+  color: #ffffff;
+  padding: 1.5rem 1rem;
+}
+
+/* ── Navigation ── */
+nav {
+  grid-area: nav;
+  background-color: #000000;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0.75rem 0;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.4rem 0.75rem;
+  transition: opacity 0.2s;
+}
+
+nav a:hover {
+  opacity: 0.7;
+}
+
+/* ── Main ── */
+main {
+  grid-area: main;
+  background-color: #d3d3d3;
+  padding: 1rem;
+  min-height: 300px;
+}
+
+/* ── Aside ── */
+aside {
+  grid-area: aside;
+  background-color: #ffffff;
+  padding: 1rem;
+  border-left: 1px solid #ccc;
+}
+
+/* ── Footer ── */
+footer {
+  grid-area: footer;
+  background-color: #3a3a3a;
+  color: #ffffff;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-weight: bold;
+}
