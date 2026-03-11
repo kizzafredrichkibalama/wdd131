@@ -1,84 +1,138 @@
 :root {
     --bg: #f4f5f7;
     --card-bg: #ffffff;
-    --accent: #1e3a8a;
+    --accent: #1e3a8a;     
     --text: #222222;
-    --muted: #6b7280;
+    --muted: #6b7280;      
+    --shadow: #d9d9d9;
+    --radius: 10px;
+    --max-width: 900px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
 }
 
 body {
-    margin: 0;
     font-family: 'Roboto', sans-serif;
     background-color: var(--bg);
     color: var(--text);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 header {
     background-color: var(--accent);
     color: #ffffff;
+    padding: 1.25rem 1rem;
     text-align: center;
-    padding: 1rem;
 }
 
 #course-title {
     display: block;
     font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+    font-size: 1.6rem;
+    margin: 0 0 0.6rem 0;
 }
 
 nav {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 0.25rem;
 }
 
 nav a {
+    display: inline-block;
+    padding: 0.5rem 0.8rem;
     text-decoration: none;
     color: #ffffff;
-    font-weight: bold;
-    padding: 8px 12px;
-    transition: 0.3s;
+    font-weight: 700;
+    border-radius: 6px;
+    transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+    outline-offset: 4px;
 }
 
-nav a:hover {
+nav a:hover,
+nav a:focus {
     background-color: #ffffff;
     color: var(--accent);
-    border-radius: 5px;
+    transform: translateY(0); /* ensure no shifting transform on hover */
 }
 
 main {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
+    max-width: var(--max-width);
+    margin: 2rem auto;
+    padding: 1rem;
     display: grid;
-    gap: 20px;
+    gap: 1.25rem;
+    align-items: start;
 }
 
-h1 {
+main > h1 {
     text-align: center;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
 }
 
 .card {
     background-color: var(--card-bg);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 2px 6px #cccccc;
+    padding: 1.25rem;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 8px var(--shadow);
+    border: 1px solid #efefef;
 }
 
 .card img {
     width: 100%;
     height: auto;
-    margin-top: 10px;
+    display: block;
+    margin: 0.75rem 0;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.card h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
 }
 
 .card p {
+    margin: 0;
     color: var(--muted);
 }
 
 footer {
     background-color: var(--accent);
     color: #ffffff;
+    padding: 1rem;
     text-align: center;
-    padding: 10px;
+    margin-top: 2rem;
+}
+
+@media (min-width: 760px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    main > h1 {
+        grid-column: 1 / -1; 
+    }
+}
+
+a:focus {
+    outline: 3px solid #fff3; 
+    outline-offset: 3px;
 }

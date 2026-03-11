@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>WDD 131 – Dynamic Web Fundamentals – Kizza Fredrich Kibalama</title>
-
     <meta name="description" content="WDD 131 – Dynamic Web Fundamentals | Kizza Fredrich Kibalama | HTML, CSS, JavaScript learning page">
     <meta name="author" content="Kizza Fredrich Kibalama">
+    <meta name="keywords" content="WDD 131, Dynamic Web Fundamentals, HTML, CSS, JavaScript, Kizza Fredrich Kibalama">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,74 +16,68 @@
     <!-- CSS -->
     <link rel="stylesheet" href="styles/base.css">
 
-    <!-- JavaScript -->
+    <!-- JS -->
     <script src="scripts/getdates.js" defer></script>
 </head>
-
 <body>
 
-<header>
+    <!-- Skip link for accessibility -->
+    <a class="skip-link" href="#maincontent">Skip to main content</a>
 
-    <span id="course-title">WDD 131 – Dynamic Web Fundamentals</span>
+    <!-- Header -->
+    <header>
+        <span id="course-title">WDD 131 – Dynamic Web Fundamentals</span>
+        <nav aria-label="Main navigation">
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://byupw.instructure.com/" target="_blank" rel="noopener noreferrer">Canvas</a>
+            <a href="https://www.churchofjesuschrist.org/study/scriptures" target="_blank" rel="noopener noreferrer">Scripture</a>
+            <a href="#" id="final-project-link">Final Project</a>
+        </nav>
+    </header>
 
-    <nav>
-        <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
-        <a href="https://byupw.instructure.com/" target="_blank">Canvas</a>
-        <a href="https://www.churchofjesuschrist.org/study/scriptures" target="_blank">Scripture</a>
-        <a href="#">Final Project</a>
-    </nav>
+    <!-- Main Content -->
+    <main id="maincontent">
+        <h1>Kizza Fredrich Kibalama</h1>
 
-</header>
+        <section class="card">
+            <h2>About Me</h2>
+            <img src="images/profile.jpg" alt="Portrait of Kizza Fredrich Kibalama" width="800" height="533">
+            <p>
+                Hello! I am <strong>Kizza Fredrich Kibalama</strong>, a student of Dynamic Web Fundamentals (WDD 131).
+                I enjoy learning modern web technologies and building interactive pages.
+            </p>
 
-<main>
+            <!-- Additional required content links (brings total links to 7+) -->
+            <p>
+                Find my professional profile on
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
+            </p>
+            <p>
+                Learning resources I use:
+                <a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN Web Docs</a>.
+            </p>
+        </section>
 
-    <h1>Kizza Fredrich Kibalama</h1>
+        <section class="card">
+            <h2>My Interests</h2>
+            <img src="images/technology.jpg" alt="Technology illustration" width="800" height="533">
+            <p>
+                My interests include web development, responsive design, and practicing best coding principles in HTML, CSS,
+                and JavaScript projects.
+            </p>
 
-    <section class="card">
+            <p>
+                I follow technology news on
+                <a href="https://techcrunch.com/" target="_blank" rel="noopener noreferrer">TechCrunch</a>.
+            </p>
+        </section>
+    </main>
 
-        <h2>About Me</h2>
-
-        <img src="images/profile.jpg" alt="Portrait of Kizza Fredrich Kibalama">
-
-        <p>
-            I am passionate about technology, digital innovation, and web development.
-            Learn more about my professional work on
-            <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>.
-        </p>
-
-        <p>
-            I enjoy learning web development from
-            <a href="https://developer.mozilla.org/" target="_blank">MDN Web Docs</a>.
-        </p>
-
-    </section>
-
-    <section class="card">
-
-        <h2>My Interests</h2>
-
-        <img src="images/technology.jpg" alt="Technology illustration">
-
-        <p>
-            My interests include web development, blockchain innovation, and digital products.
-            I follow technology updates on
-            <a href="https://techcrunch.com/" target="_blank">TechCrunch</a>.
-        </p>
-
-    </section>
-
-</main>
-
-<footer>
-
-    <p>
-        © <span id="currentyear"></span> | Kizza Fredrich Kibalama | Uganda
-    </p>
-
-    <p id="lastModified"></p>
-
-</footer>
+    <!-- Footer -->
+    <footer>
+        <p>© <span id="currentyear"></span> | Kizza Fredrich Kibalama | Uganda</p>
+        <p id="lastModified"></p>
+    </footer>
 
 </body>
-
 </html>
