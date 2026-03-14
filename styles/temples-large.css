@@ -1,34 +1,37 @@
-/* ===== Larger View ===== */
+/* ===== Larger View (min-width: 700px) ===== */
+@media screen and (min-width: 700px) {
 
-/* Header: show nav inline, hide hamburger */
-#hamburger {
-  display: none;
-}
+  /* Header: show nav inline, hide hamburger */
+  #hamburger {
+    display: none;
+  }
 
-#main-nav {
-  display: flex;
-  flex-direction: row;
-  position: static;
-  background: none;
-  padding: 0;
-  box-shadow: none;
-  gap: 0.25rem;
-  align-items: center;
-}
+  #main-nav {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    background: none;
+    padding: 0;
+    box-shadow: none;
+    gap: 0.25rem;
+    align-items: center;
+  }
 
-#main-nav a {
-  padding: 0.45rem 1rem;
-  border-radius: var(--radius);
-  font-size: 1rem;
-}
+  #main-nav a {
+    padding: 0.45rem 1rem;
+    border-radius: var(--radius);
+    font-size: 1rem;
+  }
 
-/* Gallery: 3 columns on wider screens */
-.gallery {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.8rem;
-}
+  /* Gallery: 3 columns on wider screens */
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.8rem;
+  }
 
-/* Taller images on larger screens */
-figure img {
-  height: 200px;
+  /* Taller images on larger screens */
+  figure img {
+    height: 200px;
+  }
+
 }
