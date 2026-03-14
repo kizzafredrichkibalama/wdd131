@@ -1,11 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A responsive temple album showcasing beautiful Latter-day Saint temples from around the world." />
+  <meta name="author" content="Kizza Fredrich Kibalama" />
+  <title>Temple Album – WDD 131</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/temples.css" />
+  <link rel="stylesheet" href="styles/temples-large.css" media="(min-width: 700px)" />
+  <script src="scripts/temples.js" defer></script>
 </head>
 <body>
-    
+
+  <header>
+    <h2 class="site-title">Temple Album</h2>
+    <button id="hamburger" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+    <nav id="main-nav">
+      <a href="#">Home</a>
+      <a href="#">Old</a>
+      <a href="#">New</a>
+      <a href="#">Large</a>
+      <a href="#">Small</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Home</h1>
+
+    <div class="gallery">
+
+      <figure>
+        <img src="images/temple.jpg" alt="Salt Lake City Utah Temple" loading="lazy" />
+        <figcaption>Salt Lake City, Utah</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/temple.jpg" alt="Laie Hawaii Temple" loading="lazy" />
+        <figcaption>Laie, Hawaii</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/temple.jpg" alt="Nauvoo Illinois Temple" loading="lazy" />
+        <figcaption>Nauvoo, Illinois</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/temple.jpg" alt="Washington D.C. Temple" loading="lazy" />
+        <figcaption>Washington, D.C.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/temple.jpg" alt="Mesa Arizona Temple" loading="lazy" />
+        <figcaption>Mesa, Arizona</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/temple.jpg" alt="Paris France Temple" loading="lazy" />
+        <figcaption>Paris, France</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/temple.jpg" alt="London England Temple" loading="lazy" />
+        <figcaption>London, England</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/temple.jpg" alt="Bountiful Utah Temple" loading="lazy" />
+        <figcaption>Bountiful, Utah</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/temple.jpg" alt="Tokyo Japan Temple" loading="lazy" />
+        <figcaption>Tokyo, Japan</figcaption>
+      </figure>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy;<span id="year"></span> &mdash; Kizza Fredrich Kibalama &mdash; All Rights Reserved</p>
+    <p>Last Modified: <span id="lastModified"></span></p>
+  </footer>
+
 </body>
 </html>
