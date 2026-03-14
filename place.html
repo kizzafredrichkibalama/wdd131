@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Uganda - The Pearl of Africa. Explore facts, weather, and data about this beautiful East African country.">
+  <title>Uganda - The Pearl of Africa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/place.css">
+  <script src="scripts/place.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <h1>Uganda</h1>
+    <p class="subtitle">The Pearl of Africa</p>
+  </header>
+
+  <main>
+    <div class="hero-section">
+      <!-- Data card overlays the hero image in wide view -->
+      <section class="data-card" aria-label="Country Data">
+        <h2>Data</h2>
+        <dl>
+          <dt>Area</dt><dd>241,551 km²</dd>
+          <dt>Population</dt><dd>47,123,531</dd>
+          <dt>Capital</dt><dd>Kampala</dd>
+          <dt>Languages</dt><dd>English, Swahili</dd>
+          <dt>Currency</dt><dd>Ugandan Shilling</dd>
+          <dt>Time Zone</dt><dd>UTC+3</dd>
+          <dt>Calling Code</dt><dd>+256</dd>
+          <dt>Internet TLD</dt><dd>.ug</dd>
+        </dl>
+      </section>
+
+      <!-- Hero image swaps between small and large -->
+      <picture>
+        <source srcset="images/uganda-wide.jpg" media="(min-width: 600px)">
+        <img
+          src="images/uganda-small.jpg"
+          srcset="images/uganda-small.jpg"
+          alt="Mountain gorillas in Bwindi Impenetrable Forest, Uganda"
+          width="960"
+          height="540"
+          class="hero-img"
+        >
+      </picture>
+
+      <!-- Weather card overlays the hero image in wide view -->
+      <section class="weather-card" aria-label="Current Weather">
+        <h2 class="weather-heading">Weather</h2>
+
+        <!-- SVG icon shown in mobile only -->
+        <img
+          src="images/partly-cloudy.svg"
+          alt="Partly Cloudy weather icon"
+          class="weather-icon-svg"
+          width="80"
+          height="80"
+        >
+
+        <dl>
+          <dt>Temperature</dt><dd>28 °C</dd>
+          <dt>Conditions</dt><dd>Partly Cloudy</dd>
+          <dt>Wind</dt><dd>10 km/h</dd>
+          <dt>Wind Chill</dt><dd id="wind-chill">--</dd>
+        </dl>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      &copy;<span id="current-year"></span>
+      🦍 Your Name 🦍
+      Uganda
+    </p>
+    <p>Last Modification: <span id="last-modified"></span></p>
+  </footer>
+
+</body>
+</html>
