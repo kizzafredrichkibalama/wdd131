@@ -1,4 +1,4 @@
-// ===== Temple Data Array (7 original + 3 added) =====
+// ===== Temple Data Array =====
 const temples = [
   {
     templeName: "Aba Nigeria",
@@ -56,7 +56,6 @@ const temples = [
     imageUrl:
       "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
   },
-  // --- Three additional temples added by student ---
   {
     templeName: "Salt Lake",
     location: "Salt Lake City, Utah, United States",
@@ -83,27 +82,28 @@ const temples = [
   }
 ];
 
-// ===== Helper: extract year from "YYYY, Month, DD" =====
+// ===== Helper: Parse the dedication year from "YYYY, Month, DD" =====
 function getDedicationYear(dedicated) {
   return parseInt(dedicated.split(',')[0].trim(), 10);
 }
 
-// ===== Build a temple card: text on top, image on bottom =====
+// ===== Build Temple Cards =====
 function createTempleCard(temple) {
   const fig = document.createElement('figure');
 
-  // --- Figcaption: name + detail list (top) ---
+  // --- Caption (top: name + details) ---
   const caption = document.createElement('figcaption');
 
   const heading = document.createElement('h3');
   heading.textContent = temple.templeName;
 
-  const ul = document.createElement('ul');
   const fields = [
-    { label: 'Location',  value: temple.location },
+    { label: 'Location', value: temple.location },
     { label: 'Dedicated', value: temple.dedicated },
-    { label: 'Size',      value: `${temple.area.toLocaleString()} sq ft` }
+    { label: 'Size', value: `${temple.area.toLocaleString()} sq ft` }
   ];
+
+  const ul = document.createElement('ul');
   fields.forEach(({ label, value }) => {
     const li = document.createElement('li');
     const strong = document.createElement('strong');
@@ -116,7 +116,7 @@ function createTempleCard(temple) {
   caption.appendChild(heading);
   caption.appendChild(ul);
 
-  // --- Image (bottom) with native lazy loading ---
+  // --- Image (bottom) ---
   const img = document.createElement('img');
   img.src = temple.imageUrl;
   img.alt = `${temple.templeName} Temple`;
@@ -130,7 +130,7 @@ function createTempleCard(temple) {
   return fig;
 }
 
-// ===== Render a list of temples into #gallery =====
+// ===== Render Temples into the Gallery =====
 function renderTemples(list) {
   const gallery = document.getElementById('gallery');
   gallery.innerHTML = '';
@@ -143,39 +143,45 @@ function renderTemples(list) {
     return;
   }
 
-  list.forEach(temple => gallery.appendChild(createTempleCard(temple)));
+  list.forEach(temple => {
+    gallery.appendChild(createTempleCard(temple));
+  });
 }
 
-// ===== Filter helpers =====
+// ===== Filter Logic =====
 function getFilteredTemples(filter) {
   switch (filter) {
-    case 'old':   return temples.filter(t => getDedicationYear(t.dedicated) < 1900);
-    case 'new':   return temples.filter(t => getDedicationYear(t.dedicated) > 2000);
-    case 'large': return temples.filter(t => t.area > 90000);
-    case 'small': return temples.filter(t => t.area < 10000);
-    default:      return temples;   // 'home' — all temples
+    case 'old':
+      return temples.filter(t => getDedicationYear(t.dedicated) < 1900);
+    case 'new':
+      return temples.filter(t => getDedicationYear(t.dedicated) > 2000);
+    case 'large':
+      return temples.filter(t => t.area > 90000);
+    case 'small':
+      return temples.filter(t => t.area < 10000);
+    case 'home':
+    default:
+      return temples;
   }
 }
 
-// ===== Navigation: filter on click =====
+// ===== Navigation Filtering =====
 const navLinks = document.querySelectorAll('#main-nav a');
 const pageHeading = document.getElementById('page-heading');
 
 navLinks.forEach(link => {
-  link.addEventListener('click', e => {
+  link.addEventListener('click', (e) => {
     e.preventDefault();
     const filter = link.dataset.filter;
 
-    // Update active class and aria-current
-    navLinks.forEach(l => {
-      l.classList.remove('active');
-      l.removeAttribute('aria-current');
-    });
+    // Update active state
+    navLinks.forEach(l => l.classList.remove('active'));
     link.classList.add('active');
-    link.setAttribute('aria-current', 'page');
 
-    // Update heading and gallery
+    // Update heading
     pageHeading.textContent = link.textContent;
+
+    // Render filtered temples
     renderTemples(getFilteredTemples(filter));
 
     // Close mobile menu
@@ -187,7 +193,7 @@ navLinks.forEach(link => {
   });
 });
 
-// ===== Hamburger toggle =====
+// ===== Hamburger / Nav Toggle =====
 const hamburger = document.getElementById('hamburger');
 const nav = document.getElementById('main-nav');
 
@@ -203,8 +209,12 @@ if (hamburger && nav) {
 const yearSpan = document.getElementById('year');
 const lastModSpan = document.getElementById('lastModified');
 
-if (yearSpan)    yearSpan.textContent    = new Date().getFullYear();
-if (lastModSpan) lastModSpan.textContent = document.lastModified;
+if (yearSpan) {
+  yearSpan.textContent = new Date().getFullYear();
+}
+if (lastModSpan) {
+  lastModSpan.textContent = document.lastModified;
+}
 
-// ===== Initial render: show all temples (Home) =====
+// ===== Initial Render (Home = all temples) =====
 renderTemples(temples);

@@ -8,18 +8,17 @@
   <title>Temple Album – WDD 131</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles/filtered-temples.css">
   <script src="scripts/filtered-temples.js" defer></script>
 </head>
 <body>
 
   <header>
-    <!-- Use <p> not <h2> to keep heading order: h1 belongs in <main> -->
-    <p class="site-title">Temple Album</p>
+    <h2 class="site-title">Temple Album</h2>
     <button id="hamburger" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
-    <nav id="main-nav" aria-label="Temple filter">
-      <a href="#" data-filter="home" class="active" aria-current="page">Home</a>
+    <nav id="main-nav">
+      <a href="#" data-filter="home" class="active">Home</a>
       <a href="#" data-filter="old">Old</a>
       <a href="#" data-filter="new">New</a>
       <a href="#" data-filter="large">Large</a>
@@ -29,7 +28,7 @@
 
   <main>
     <h1 id="page-heading">Home</h1>
-    <div class="gallery" id="gallery" aria-live="polite" aria-label="Temple gallery"></div>
+    <div class="gallery" id="gallery"></div>
   </main>
 
   <footer>
