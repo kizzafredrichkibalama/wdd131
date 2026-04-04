@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="WDD 131 Website Planning Document — RoboVerse, a robotics technology and applications site." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WDD 131 Website Planning Document — RoboVerse, a robotics technology and applications site.">
+  <meta name="author" content="Kizza Fredrick Kibalama">
   <title>RoboVerse | Site Plan — WDD 131</title>
-  <link rel="stylesheet" href="siteplan.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="siteplan.css">
 </head>
 <body>
 <div class="wrapper">
@@ -55,7 +59,7 @@
       It is designed for students, enthusiasts, and curious learners who want to understand how
       robots work and how they are reshaping modern life. The site will provide:
     </p>
-    <ul style="margin: .5rem 0 .75rem 1.4rem; line-height: 2.1;">
+    <ul class="purpose-list">
       <li>An introduction to robotics — what robots are and the core principles of how they operate</li>
       <li>A breakdown of major robot types: industrial, service, medical, and AI-powered robots</li>
       <li>A visual timeline of the history of robotics from early automata to modern systems</li>
@@ -98,15 +102,15 @@
     <span class="tag">Visual Identity</span>
 
     <p>
-      The color palette is built around a deep space aesthetic — dark backgrounds create an immersive,
-      high-tech feel, while electric cyan and circuit blue serve as vivid accents that direct attention
-      and reinforce the robotics/AI theme. The schema is used throughout this planning document.
+      The palette is built around a deep space aesthetic — dark backgrounds create an immersive,
+      high-tech feel, while electric cyan and circuit blue serve as vivid accents that direct
+      attention and reinforce the robotics theme. This schema is applied throughout this document.
     </p>
 
     <div class="color-grid">
 
       <div class="swatch">
-        <div class="swatch-preview" style="background:#0b0f1a;"></div>
+        <div class="swatch-preview swatch-deep-space"></div>
         <div class="swatch-info">
           <h3>Deep Space</h3>
           <code>#0b0f1a</code>
@@ -115,7 +119,7 @@
       </div>
 
       <div class="swatch">
-        <div class="swatch-preview" style="background:#00d4ff;"></div>
+        <div class="swatch-preview swatch-cyan"></div>
         <div class="swatch-info">
           <h3>Electric Cyan</h3>
           <code>#00d4ff</code>
@@ -124,7 +128,7 @@
       </div>
 
       <div class="swatch">
-        <div class="swatch-preview" style="background:#1a2236;"></div>
+        <div class="swatch-preview swatch-steel-navy"></div>
         <div class="swatch-info">
           <h3>Steel Navy</h3>
           <code>#1a2236</code>
@@ -133,16 +137,16 @@
       </div>
 
       <div class="swatch">
-        <div class="swatch-preview" style="background:#e8f0ff;"></div>
+        <div class="swatch-preview swatch-ghost-white"></div>
         <div class="swatch-info">
           <h3>Ghost White</h3>
           <code>#e8f0ff</code>
-          <p>Primary heading and strong text color — crisp on dark backgrounds.</p>
+          <p>Primary heading and strong text — crisp on dark backgrounds.</p>
         </div>
       </div>
 
       <div class="swatch">
-        <div class="swatch-preview" style="background:#9aadc8;"></div>
+        <div class="swatch-preview swatch-slate-blue"></div>
         <div class="swatch-info">
           <h3>Slate Blue</h3>
           <code>#9aadc8</code>
@@ -151,7 +155,7 @@
       </div>
 
       <div class="swatch">
-        <div class="swatch-preview" style="background:#0077ff;"></div>
+        <div class="swatch-preview swatch-circuit-blue"></div>
         <div class="swatch-info">
           <h3>Circuit Blue</h3>
           <code>#0077ff</code>
@@ -171,9 +175,9 @@
     <span class="tag">Fonts &amp; Usage</span>
 
     <p>
-      Two Google Fonts are used to balance technical character with everyday readability.
-      Orbitron handles all headings and display text, while Source Sans 3 keeps body content
-      clean and legible across screen sizes.
+      Two Google Fonts balance technical character with everyday readability.
+      Orbitron handles all headings and display text, while Source Sans 3 keeps body
+      content clean and legible across all screen sizes.
     </p>
 
     <div class="font-demo">
@@ -218,75 +222,68 @@
 
     <div class="wf-grid">
 
-      <!-- ── Mobile ── -->
+      <!-- Mobile -->
       <div class="wf-box">
         <div class="wf-label">📱 Mobile &lt;640px</div>
         <div class="wf-body">
-          <!-- nav -->
-          <div class="b b-nav"><s></s><s></s><s></s></div>
-          <!-- hero -->
-          <div class="b b-hero">Hero / Tagline</div>
-          <!-- intro text -->
-          <div class="b b-bar w"></div>
-          <div class="b b-bar m"></div>
-          <div class="b b-bar s"></div>
-          <!-- section label -->
-          <div class="b b-bar a s"></div>
-          <!-- stacked cards -->
+          <div class="b-nav">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="b-hero">Hero / Tagline</div>
+          <div class="b-bar b-bar-wide"></div>
+          <div class="b-bar b-bar-med"></div>
+          <div class="b-bar b-bar-slim"></div>
+          <div class="b-bar b-bar-accent b-bar-slim"></div>
           <div class="b-row">
             <div class="b-card"></div>
             <div class="b-card"></div>
             <div class="b-card"></div>
           </div>
-          <!-- cta -->
-          <div class="b b-bar a" style="height:20px;width:55%;margin:0 auto;border-radius:4px;"></div>
-          <!-- footer -->
+          <div class="b-bar b-bar-accent b-bar-cta"></div>
           <div class="b-foot"></div>
         </div>
       </div>
 
-      <!-- ── Desktop ── -->
+      <!-- Desktop -->
       <div class="wf-box">
         <div class="wf-label">🖥️ Desktop &gt;900px</div>
         <div class="wf-body">
-          <!-- nav wider -->
-          <div class="b b-nav"><s></s><s></s><s></s><s></s><s></s></div>
-          <!-- hero tall -->
-          <div class="b b-hero" style="height:88px;">Hero Banner + Robot Graphic</div>
-          <!-- two-column intro -->
-          <div class="b-row c2">
-            <div style="display:flex;flex-direction:column;gap:.35rem;">
-              <div class="b b-bar w"></div>
-              <div class="b b-bar m"></div>
-              <div class="b b-bar s"></div>
+          <div class="b-nav">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <div class="b-hero b-hero-tall">Hero Banner + Robot Graphic</div>
+          <div class="b-row b-row-2">
+            <div class="b-text-col">
+              <div class="b-bar b-bar-wide"></div>
+              <div class="b-bar b-bar-med"></div>
+              <div class="b-bar b-bar-slim"></div>
             </div>
-            <div class="b-card" style="height:auto;min-height:52px;"></div>
+            <div class="b-card b-card-auto"></div>
           </div>
-          <!-- section label -->
-          <div class="b b-bar a s"></div>
-          <!-- 3-col cards -->
-          <div class="b-row c3">
+          <div class="b-bar b-bar-accent b-bar-slim"></div>
+          <div class="b-row b-row-3">
             <div class="b-card"></div>
             <div class="b-card"></div>
             <div class="b-card"></div>
           </div>
-          <!-- section label 2 -->
-          <div class="b b-bar a s"></div>
-          <!-- timeline -->
-          <div class="b-tl">
-            <d></d><d></d><d class="a"></d><d></d><d></d>
+          <div class="b-bar b-bar-accent b-bar-slim"></div>
+          <div class="b-timeline">
+            <div class="b-tl-block"></div>
+            <div class="b-tl-block"></div>
+            <div class="b-tl-block b-tl-accent"></div>
+            <div class="b-tl-block"></div>
+            <div class="b-tl-block"></div>
           </div>
-          <!-- footer -->
           <div class="b-foot"></div>
         </div>
       </div>
 
-    </div><!-- /.wf-grid -->
+    </div>
 
     <div class="wf-legend">
-      <span><i class="ld" style="background:var(--border);"></i> Content block</span>
-      <span><i class="ld" style="background:rgba(0,212,255,.22);"></i> Accent / interactive</span>
-      <span><i class="ld" style="background:rgba(0,119,255,.15);border:1px solid rgba(0,212,255,.18);"></i> Hero / featured area</span>
+      <span><span class="ld ld-block"></span> Content block</span>
+      <span><span class="ld ld-accent"></span> Accent / interactive</span>
+      <span><span class="ld ld-hero"></span> Hero / featured area</span>
     </div>
 
   </section>
@@ -299,6 +296,6 @@
     <p><strong>RoboVerse</strong> &mdash; WDD 131 Site Plan &nbsp;|&nbsp; &copy; 2025 Student Project</p>
   </footer>
 
-</div><!-- /.wrapper -->
+</div>
 </body>
 </html>
