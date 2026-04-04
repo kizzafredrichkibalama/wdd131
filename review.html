@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Thank you for submitting your product review." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Thank you for submitting your product review. Here is a summary of your feedback.">
+  <meta name="author" content="Kizza Fredrich Kibalama">
   <title>Review Submitted | W05 Assignment</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/review.js" defer></script>
 </head>
 <body>
 
@@ -21,12 +23,12 @@
   <!-- MAIN -->
   <main class="form-wrapper confirmation-wrapper">
     <div class="confirm-card">
-      <div class="confirm-icon" aria-hidden="true">✓</div>
+      <div class="confirm-icon" aria-hidden="true">&#10003;</div>
       <h2>Your review has been received.</h2>
       <p>We appreciate you taking the time to share your thoughts. Your feedback helps others make informed decisions.</p>
 
       <div class="summary-box" id="reviewSummary">
-        <!-- Populated by JS -->
+        <!-- Populated by review.js -->
       </div>
 
       <div class="counter-box">
@@ -44,6 +46,5 @@
     <p id="lastModified"></p>
   </footer>
 
-  <script src="scripts/review.js"></script>
 </body>
 </html>

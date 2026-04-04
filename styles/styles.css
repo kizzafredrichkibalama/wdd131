@@ -27,6 +27,9 @@
   --clr-counter-bg:  #2b0a2f;
   --clr-counter-txt: #f5eef8;
 
+  --clr-muted:       #555555;   /* muted text */
+  --clr-muted-dark:  #444444;   /* slightly darker muted */
+
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body:    'DM Sans', 'Segoe UI', sans-serif;
 
@@ -218,10 +221,6 @@ select {
   transform: scale(1.1);
 }
 
-/* Reorder for CSS-only hover highlight trick:
-   labels come BEFORE inputs in DOM for the star effect */
-.star-option { flex-direction: column; }
-
 /* ---------- Checkboxes ---------- */
 .checkbox-grid {
   display: grid;
@@ -314,7 +313,7 @@ select {
 
 .confirm-card > p {
   font-size: 0.97rem;
-  color: #555;
+  color: var(--clr-muted);
   margin-bottom: 1.6rem;
   line-height: 1.6;
 }
@@ -350,7 +349,7 @@ select {
 .summary-row:last-child { border-bottom: none; }
 
 .summary-row .s-label { font-weight: 600; color: var(--clr-label); }
-.summary-row .s-value { color: #444; text-align: right; }
+.summary-row .s-value { color: var(--clr-muted-dark); text-align: right; }
 
 /* Counter */
 .counter-box {
