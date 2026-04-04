@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Thank you for submitting your product review." />
+  <title>Review Submitted | W05 Assignment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <h1>Review Submitted!</h1>
+    <p class="header-sub">Thank you for your feedback</p>
+  </header>
+
+  <!-- MAIN -->
+  <main class="form-wrapper confirmation-wrapper">
+    <div class="confirm-card">
+      <div class="confirm-icon" aria-hidden="true">✓</div>
+      <h2>Your review has been received.</h2>
+      <p>We appreciate you taking the time to share your thoughts. Your feedback helps others make informed decisions.</p>
+
+      <div class="summary-box" id="reviewSummary">
+        <!-- Populated by JS -->
+      </div>
+
+      <div class="counter-box">
+        <p>Total reviews submitted from this device:</p>
+        <span class="counter-number" id="reviewCount">0</span>
+      </div>
+
+      <a href="form.html" class="btn-back">Submit Another Review</a>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>&copy;2025 Kizza Fredrich Kibalama</p>
+    <p id="lastModified"></p>
+  </footer>
+
+  <script src="scripts/review.js"></script>
+</body>
+</html>

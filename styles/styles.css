@@ -1,0 +1,417 @@
+/* ===================================================
+   W05 Product Review Form — styles.css
+   Color palette: deep plum header, soft lavender-grey
+   body, warm ivory accents. Fonts: Playfair Display +
+   DM Sans.
+=================================================== */
+
+/* ---------- CSS Custom Properties ---------- */
+:root {
+  --clr-header-bg:   #2b0a2f;   /* deep plum */
+  --clr-header-text: #f5eef8;   /* near-white */
+  --clr-body-bg:     #f0eaf4;   /* soft lavender-grey */
+  --clr-form-bg:     #e4dcea;   /* slightly darker lavender */
+  --clr-border:      #c4b8d0;
+  --clr-input-bg:    #fdfaff;
+  --clr-text:        #1e0d22;   /* near-black plum */
+  --clr-label:       #2b0a2f;
+  --clr-optional:    #7b52a0;   /* muted purple */
+  --clr-star-idle:   #b8a9c2;
+  --clr-star-active: #d4a017;   /* gold */
+  --clr-btn-bg:      #2b0a2f;
+  --clr-btn-text:    #f5eef8;
+  --clr-btn-hover:   #4a1258;
+  --clr-footer-bg:   #1a0620;
+  --clr-footer-text: #e8d9f0;
+  --clr-confirm-chk: #2b0a2f;
+  --clr-counter-bg:  #2b0a2f;
+  --clr-counter-txt: #f5eef8;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'DM Sans', 'Segoe UI', sans-serif;
+
+  --radius-sm:  6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-card: 0 4px 24px rgba(43, 10, 47, 0.12);
+  --transition: 0.2s ease;
+}
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--clr-body-bg);
+  color: var(--clr-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  background-color: var(--clr-header-bg);
+  color: var(--clr-header-text);
+  text-align: center;
+  padding: 2rem 1.5rem 1.75rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.35);
+}
+
+.site-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+}
+
+.header-sub {
+  font-size: 0.95rem;
+  opacity: 0.75;
+  margin-top: 0.4rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ---------- Main / Form Wrapper ---------- */
+main { flex: 1; display: flex; justify-content: center; padding: 2rem 1rem 3rem; }
+
+.form-wrapper {
+  background: var(--clr-form-bg);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.75rem;
+  width: 100%;
+  max-width: 680px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--clr-border);
+  animation: fadeUp 0.45s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Field Groups ---------- */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 1.6rem;
+}
+
+/* Labels */
+.field-group > label,
+fieldset legend {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--clr-label);
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 1.6rem;
+}
+
+fieldset legend {
+  margin-bottom: 0.65rem;
+  line-height: 1.4;
+}
+
+fieldset legend em {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: var(--clr-optional);
+}
+
+.optional {
+  font-weight: 400;
+  font-size: 0.88rem;
+  color: var(--clr-optional);
+}
+
+/* ---------- Inputs & Selects ---------- */
+select,
+input[type="date"],
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  border: 1.5px solid var(--clr-border);
+  border-radius: var(--radius-sm);
+  background: var(--clr-input-bg);
+  color: var(--clr-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  outline: none;
+}
+
+select:focus,
+input[type="date"]:focus,
+input[type="text"]:focus,
+textarea:focus {
+  border-color: var(--clr-header-bg);
+  box-shadow: 0 0 0 3px rgba(43, 10, 47, 0.15);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%232b0a2f' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.9rem center;
+  padding-right: 2.4rem;
+  cursor: pointer;
+}
+
+/* ---------- Star Rating ---------- */
+.star-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.2rem;
+  margin-top: 0.3rem;
+}
+
+.star-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.star-option label {
+  font-size: 1.1rem;
+  color: var(--clr-star-idle);
+  cursor: pointer;
+  transition: color var(--transition), transform var(--transition);
+  letter-spacing: -0.05em;
+  user-select: none;
+}
+
+.star-option input[type="radio"] {
+  accent-color: var(--clr-header-bg);
+  width: 1.1rem;
+  height: 1.1rem;
+  cursor: pointer;
+}
+
+.star-option input[type="radio"]:checked + label,
+.star-option input[type="radio"]:checked ~ label,
+.star-option:has(input:checked) label {
+  color: var(--clr-star-active);
+}
+
+.star-option label:hover {
+  color: var(--clr-star-active);
+  transform: scale(1.1);
+}
+
+/* Reorder for CSS-only hover highlight trick:
+   labels come BEFORE inputs in DOM for the star effect */
+.star-option { flex-direction: column; }
+
+/* ---------- Checkboxes ---------- */
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem 1rem;
+  margin-top: 0.3rem;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.checkbox-item input[type="checkbox"] {
+  width: 1.2rem;
+  height: 1.2rem;
+  flex-shrink: 0;
+  accent-color: var(--clr-header-bg);
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.checkbox-item label {
+  font-size: 0.97rem;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 1.3;
+}
+
+/* ---------- Submit Button ---------- */
+.btn-submit {
+  display: block;
+  width: 100%;
+  padding: 0.85rem 1.5rem;
+  background: var(--clr-btn-bg);
+  color: var(--clr-btn-text);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: 0.03em;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 3px 10px rgba(43, 10, 47, 0.3);
+}
+
+.btn-submit:hover {
+  background: var(--clr-btn-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(43, 10, 47, 0.35);
+}
+
+.btn-submit:active { transform: translateY(0); }
+
+/* ---------- Confirmation Page ---------- */
+.confirmation-wrapper { align-items: flex-start; }
+
+.confirm-card {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.confirm-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--clr-header-bg);
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 16px rgba(43, 10, 47, 0.3);
+  animation: popIn 0.4s cubic-bezier(.34,1.56,.64,1) both;
+}
+
+@keyframes popIn {
+  from { transform: scale(0); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.confirm-card h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--clr-header-bg);
+  margin-bottom: 0.6rem;
+}
+
+.confirm-card > p {
+  font-size: 0.97rem;
+  color: #555;
+  margin-bottom: 1.6rem;
+  line-height: 1.6;
+}
+
+/* Summary box */
+.summary-box {
+  background: var(--clr-input-bg);
+  border: 1.5px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.3rem;
+  text-align: left;
+  margin-bottom: 1.6rem;
+}
+
+.summary-box h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--clr-header-bg);
+  margin-bottom: 0.7rem;
+  border-bottom: 1px solid var(--clr-border);
+  padding-bottom: 0.4rem;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.93rem;
+  padding: 0.3rem 0;
+  border-bottom: 1px dashed var(--clr-border);
+  gap: 1rem;
+}
+
+.summary-row:last-child { border-bottom: none; }
+
+.summary-row .s-label { font-weight: 600; color: var(--clr-label); }
+.summary-row .s-value { color: #444; text-align: right; }
+
+/* Counter */
+.counter-box {
+  background: var(--clr-counter-bg);
+  color: var(--clr-counter-txt);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.counter-box p { font-size: 0.93rem; opacity: 0.85; text-align: left; }
+
+.counter-number {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  line-height: 1;
+  color: var(--clr-star-active);
+}
+
+.btn-back {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background: var(--clr-btn-bg);
+  color: var(--clr-btn-text);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.97rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: background var(--transition), transform var(--transition);
+  box-shadow: 0 3px 10px rgba(43, 10, 47, 0.25);
+}
+
+.btn-back:hover {
+  background: var(--clr-btn-hover);
+  transform: translateY(-2px);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--clr-footer-bg);
+  color: var(--clr-footer-text);
+  text-align: center;
+  padding: 1.3rem 1rem;
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 480px) {
+  .form-wrapper { padding: 1.5rem 1.1rem; }
+
+  .star-row { gap: 0.4rem 0.8rem; }
+  .star-option label { font-size: 0.95rem; }
+
+  .checkbox-grid { grid-template-columns: 1fr; }
+
+  .counter-box { flex-direction: column; text-align: center; }
+  .counter-box p { text-align: center; }
+}
