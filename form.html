@@ -3,41 +3,118 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Thank you for submitting your product review. Here is a summary of your feedback.">
+  <meta name="description" content="Submit a product review for our lineup of home and tech products.">
   <meta name="author" content="Kizza Fredrich Kibalama">
-  <title>Review Submitted | W05 Assignment</title>
+  <title>Product Review | W05 Assignment</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/styles.css">
-  <script src="scripts/review.js" defer></script>
+  <script src="scripts/products.js" defer></script>
+  <script src="scripts/main.js" defer></script>
 </head>
 <body>
 
   <!-- HEADER -->
   <header class="site-header">
-    <h1>Review Submitted!</h1>
-    <p class="header-sub">Thank you for your feedback</p>
+    <h1>Product Review</h1>
+    <p class="header-sub">Share your experience with us</p>
   </header>
 
   <!-- MAIN -->
-  <main class="form-wrapper confirmation-wrapper">
-    <div class="confirm-card">
-      <div class="confirm-icon" aria-hidden="true">&#10003;</div>
-      <h2>Your review has been received.</h2>
-      <p>We appreciate you taking the time to share your thoughts. Your feedback helps others make informed decisions.</p>
+  <main class="form-wrapper">
+    <form id="reviewForm" method="get" action="review.html">
 
-      <div class="summary-box" id="reviewSummary">
-        <!-- Populated by review.js -->
+      <!-- Product Name -->
+      <div class="field-group">
+        <label for="productName">Product Name</label>
+        <select id="productName" name="productName" required>
+          <option value="" disabled selected>Select a Product ...</option>
+        </select>
       </div>
 
-      <div class="counter-box">
-        <p>Total reviews submitted from this device:</p>
-        <span class="counter-number" id="reviewCount">0</span>
+      <!-- Overall Rating -->
+      <fieldset class="rating-fieldset">
+        <legend>Overall Rating</legend>
+        <div class="star-row">
+          <div class="star-option">
+            <label for="star1" aria-label="1 star">&#9733;</label>
+            <input type="radio" id="star1" name="rating" value="1" required>
+          </div>
+          <div class="star-option">
+            <label for="star2" aria-label="2 stars">&#9733;&#9733;</label>
+            <input type="radio" id="star2" name="rating" value="2" required>
+          </div>
+          <div class="star-option">
+            <label for="star3" aria-label="3 stars">&#9733;&#9733;&#9733;</label>
+            <input type="radio" id="star3" name="rating" value="3" required>
+          </div>
+          <div class="star-option">
+            <label for="star4" aria-label="4 stars">&#9733;&#9733;&#9733;&#9733;</label>
+            <input type="radio" id="star4" name="rating" value="4" required>
+          </div>
+          <div class="star-option">
+            <label for="star5" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</label>
+            <input type="radio" id="star5" name="rating" value="5" required>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Date of Installation -->
+      <div class="field-group">
+        <label for="installDate">Date of Installation</label>
+        <input type="date" id="installDate" name="installDate" required>
       </div>
 
-      <a href="form.html" class="btn-back">Submit Another Review</a>
-    </div>
+      <!-- Useful Features -->
+      <fieldset class="checkbox-fieldset">
+        <legend>Which features did you find useful in the product? <em>(Check all that apply)</em></legend>
+        <div class="checkbox-grid">
+          <div class="checkbox-item">
+            <input type="checkbox" id="feat-durability" name="features" value="Durability">
+            <label for="feat-durability">Durability</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="feat-ease" name="features" value="Ease of Use">
+            <label for="feat-ease">Ease of Use</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="feat-performance" name="features" value="Performance">
+            <label for="feat-performance">Performance</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="feat-design" name="features" value="Design">
+            <label for="feat-design">Design</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="feat-value" name="features" value="Value for Money">
+            <label for="feat-value">Value for Money</label>
+          </div>
+          <div class="checkbox-item">
+            <input type="checkbox" id="feat-support" name="features" value="Customer Support">
+            <label for="feat-support">Customer Support</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Written Review -->
+      <div class="field-group">
+        <label for="writtenReview">Written Review <span class="optional">(Optional)</span></label>
+        <textarea id="writtenReview" name="writtenReview" rows="5" placeholder="Tell us what you think about this product..."></textarea>
+      </div>
+
+      <!-- User Name -->
+      <div class="field-group">
+        <label for="userName">Your Name <span class="optional">(Optional)</span></label>
+        <input type="text" id="userName" name="userName" placeholder="e.g. Jane Doe" autocomplete="name">
+      </div>
+
+      <!-- Submit -->
+      <div class="field-group">
+        <input type="submit" value="Post Review" class="btn-submit">
+      </div>
+
+    </form>
   </main>
 
   <!-- FOOTER -->
