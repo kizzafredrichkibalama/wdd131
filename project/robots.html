@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse the RoboVerse robot gallery — industrial arms, medical systems, service robots, and space explorers, filterable by category.">
+  <meta name="author" content="Kizza Fredrick Kibalama">
+  <title>Robot Gallery | RoboVerse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+  <header>
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="container">
+        <a href="index.html" class="nav-brand" aria-label="RoboVerse — go to home page">
+          <span class="nav-logo" aria-hidden="true">🤖</span>
+          <span>Robo<em>Verse</em></span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-links" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="robots.html">Robot Gallery</a></li>
+          <li><a href="history.html">History &amp; Quiz</a></li>
+          <li><a href="references.html">References</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ── Page header ────────────────────────── -->
+    <section class="page-header">
+      <div class="container">
+        <h1>Robot Gallery</h1>
+        <p>
+          A curated collection of eight notable robots across four major categories.
+          Use the filters below to browse by type.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Gallery ────────────────────────────── -->
+    <section class="section-pad" aria-labelledby="gallery-heading">
+      <div class="container">
+        <h2 id="gallery-heading" class="reveal">Browse by Category</h2>
+
+        <!-- Filter buttons -->
+        <div class="filter-bar" role="group" aria-label="Filter robots by category">
+          <button class="filter-btn active" data-category="all" type="button">All Robots</button>
+          <button class="filter-btn" data-category="industrial" type="button">Industrial</button>
+          <button class="filter-btn" data-category="medical" type="button">Medical</button>
+          <button class="filter-btn" data-category="service" type="button">Service</button>
+          <button class="filter-btn" data-category="space" type="button">Space</button>
+        </div>
+
+        <!-- Result count label (updated by JS) -->
+        <p id="filter-count" aria-live="polite"></p>
+
+        <!-- Cards rendered by robots.js -->
+        <div class="cards-grid" id="robot-grid" aria-live="polite" aria-label="Robot cards"></div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 <strong>RoboVerse</strong> &mdash; WDD 131 Student Project &nbsp;|&nbsp; Kizza Fredrick Kibalama</p>
+      <p>
+        <a href="references.html">References</a>
+        &nbsp;|&nbsp;
+        <span class="visit-count" aria-live="polite"></span>
+      </p>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+  <script src="scripts/robots.js"></script>
+
+</body>
+</html>

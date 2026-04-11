@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RoboVerse — an educational hub exploring robotics technology, types of robots, history, and real-world applications in healthcare, manufacturing, and space.">
+  <meta name="author" content="Kizza Fredrick Kibalama">
+  <title>Home | RoboVerse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+  <header>
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="container">
+        <a href="index.html" class="nav-brand" aria-label="RoboVerse — go to home page">
+          <span class="nav-logo" aria-hidden="true">🤖</span>
+          <span>Robo<em>Verse</em></span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-links" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="robots.html">Robot Gallery</a></li>
+          <li><a href="history.html">History &amp; Quiz</a></li>
+          <li><a href="references.html">References</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ── Hero ──────────────────────────────── -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <span class="hero-icon" aria-hidden="true">🤖</span>
+        <h1 id="hero-heading">Welcome to <em>RoboVerse</em></h1>
+        <p class="hero-subtitle">
+          Explore the world of robotics — from the machines reshaping factories and hospitals
+          to the autonomous rovers uncovering the secrets of distant planets.
+        </p>
+        <div class="hero-cta">
+          <a href="robots.html" class="btn-primary">Explore Robots</a>
+          <a href="history.html" class="btn-secondary">View Timeline</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Rotating Facts ─────────────────────── -->
+    <section class="fact-section section-alt" aria-label="Did you know — rotating robotics facts">
+      <div class="container">
+        <p class="fact-label">&#128161; Did You Know?</p>
+        <p class="fact-display" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- ── What Is Robotics ───────────────────── -->
+    <section class="section-pad" aria-labelledby="what-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 id="what-heading">What Is Robotics?</h2>
+          <p>
+            Robotics is the interdisciplinary science that combines engineering, computer science,
+            and mathematics to design, build, program, and operate machines capable of carrying out
+            tasks autonomously or with minimal human guidance.
+          </p>
+        </div>
+        <p class="reveal">
+          Modern robots range from microscopic surgical tools to colossal industrial arms and the
+          roving science labs exploring Mars. At their core, all robots share three fundamentals:
+          <strong>sensors</strong> that perceive the environment, <strong>control systems</strong>
+          that process that information, and <strong>actuators</strong> — the motors and mechanisms
+          that produce physical movement.
+        </p>
+        <p class="reveal">
+          Rapid advances in artificial intelligence, machine learning, and materials science are
+          giving rise to a new generation of robots that learn from experience, collaborate naturally
+          with people, and perform in conditions that were once considered impossible for machines.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Robot Categories ───────────────────── -->
+    <section class="section-pad section-alt" aria-labelledby="categories-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 id="categories-heading">Robot Categories</h2>
+          <p>Robots are classified by their purpose and operating environment. Browse all four categories in the gallery.</p>
+        </div>
+        <div class="feature-grid">
+          <a href="robots.html" class="feature-card reveal" aria-label="Browse industrial robots">
+            <span class="feature-icon" aria-hidden="true">&#127981;</span>
+            <h3>Industrial</h3>
+            <p>Robotic arms and automated systems that power manufacturing, welding, and assembly lines around the world.</p>
+          </a>
+          <a href="robots.html" class="feature-card reveal" aria-label="Browse medical robots">
+            <span class="feature-icon" aria-hidden="true">&#127973;</span>
+            <h3>Medical</h3>
+            <p>Surgical platforms and hospital automation tools that improve precision, reduce recovery time, and enhance patient safety.</p>
+          </a>
+          <a href="robots.html" class="feature-card reveal" aria-label="Browse service robots">
+            <span class="feature-icon" aria-hidden="true">&#127968;</span>
+            <h3>Service</h3>
+            <p>From robotic vacuum cleaners to dynamic four-legged platforms, service robots assist people in everyday environments.</p>
+          </a>
+          <a href="robots.html" class="feature-card reveal" aria-label="Browse space robots">
+            <span class="feature-icon" aria-hidden="true">&#128640;</span>
+            <h3>Space</h3>
+            <p>Rovers, robotic arms, and autonomous spacecraft exploring environments far beyond the reach of human astronauts.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 <strong>RoboVerse</strong> &mdash; WDD 131 Student Project &nbsp;|&nbsp; Kizza Fredrick Kibalama</p>
+      <p>
+        <a href="references.html">References</a>
+        &nbsp;|&nbsp;
+        <span class="visit-count" aria-live="polite"></span>
+      </p>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+
+</body>
+</html>
