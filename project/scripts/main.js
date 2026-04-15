@@ -1,13 +1,13 @@
-/* === ROBOVERSE — main.js ===
+/*  ROBOVERSE — main.js
    Shared functionality across all pages
-   - Navigation toggle (mobile hamburger)
+   - Navigation toggle 
    - Active link highlight
    - Visit counter stored in localStorage
    - Scroll reveal via IntersectionObserver
-   - Rotating facts (home page only)
-========================================== */
+   - Rotating facts 
+ */
 
-// ── Navigation toggle ────────────────────────
+// ── Navigation toggle ───
 function initNav() {
   const toggle   = document.querySelector('.nav-toggle');
   const navLinks = document.querySelector('.nav-links');

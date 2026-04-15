@@ -1,12 +1,12 @@
-/* === ROBOVERSE — robots.js ===
+/* ROBOVERSE — robots.js 
    Robot gallery page functionality
    - Robot data (array of objects)
    - renderCards() using template literals
    - filterRobots() using Array.filter()
    - localStorage: persist last selected filter
-========================================== */
+ */
 
-// ── Robot data ────────────────────────────────
+// ── Robot data ────
 const robots = [
   {
     id: 1,
@@ -90,10 +90,21 @@ const robots = [
   }
 ];
 
+// ── Update live filter count label ────────────
+function updateCountLabel(count) {
+  const label = document.querySelector('#filter-count');
+  if (label) {
+    label.textContent = `Showing ${count} robot${count !== 1 ? 's' : ''}`;
+  }
+}
+
 // ── Render robot cards ────────────────────────
 function renderCards(data) {
   const grid = document.querySelector('#robot-grid');
   if (!grid) return;
+
+  // Always update the count label when cards are rendered
+  updateCountLabel(data.length);
 
   if (data.length === 0) {
     grid.innerHTML = `<p class="no-results">No robots found in this category.</p>`;
@@ -169,22 +180,7 @@ function initFilters() {
   filterRobots(saved);
 }
 
-// ── Update live filter count label ────────────
-function updateCountLabel(count) {
-  const label = document.querySelector('#filter-count');
-  if (label) {
-    label.textContent = `Showing ${count} robot${count !== 1 ? 's' : ''}`;
-  }
-}
-
 // ── Init ──────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   initFilters();
-
-  // Patch renderCards to also update the count label
-  const originalRender = renderCards;
-  window.renderCards = data => {
-    originalRender(data);
-    updateCountLabel(data.length);
-  };
 });

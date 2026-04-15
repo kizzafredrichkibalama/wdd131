@@ -1,13 +1,13 @@
-/* === ROBOVERSE — history.js ===
+/*  ROBOVERSE — history.js 
    History & Quiz page functionality
    - Quiz questions (array of objects)
    - renderQuiz() builds form with template literals
    - calculateScore() with conditional branching
    - localStorage: save and load quiz results
    - Contact form with localStorage for convenience
-========================================== */
+ */
 
-// ── Quiz question data ────────────────────────
+// ── Quiz question data ────
 const quizQuestions = [
   {
     id: 'q1',
